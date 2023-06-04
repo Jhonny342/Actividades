@@ -1,0 +1,85 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+html
+{
+    background-color: #ffffff;
+}
+body
+{
+    background-color: #f5f5f5;
+    width: 917px;
+    height: 827px;
+    margin: auto;
+}
+
+/* ------------------------------ */
+
+header
+{
+    height: 100px;
+}
+.txt01
+{
+    font-weight: normal;
+}
+.linea
+{
+    padding-top: 21px;
+    width: 917px;
+    border-bottom: 3px solid #e2e2e2;
+}
+/* ------------------------------ */
+
+article
+{
+    height: 627px;
+}
+.cont01
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mapa
+{
+    height: 484px;
+    margin: auto;
+}
+/* ------------------------------ */
+
+footer
+{
+    height: 100px;
+}
+.cont02
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.caja1
+{
+    margin: 0 1px;
+}
+.caja2
+{
+    width: 170px;
+    margin: 0 11px;
+}
+.textos
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texto1
+{
+    margin: 0 50px;
+}
+.texto2
+{
+    margin: 0 70px;
+}
