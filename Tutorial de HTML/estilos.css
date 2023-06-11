@@ -1,0 +1,19 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+html
+{
+    background-color: #000000;
+}
+body
+{
+    background-color: #ffffff;
+    width: 1000px;
+    height: 9546px;
+}
+.linea
+{
+    border: 1px solid black;
+}
