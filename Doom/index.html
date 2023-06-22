@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos con el DOM </title>
+</head>
+<body>
+
+    <!-- 1) Uso del método getElementById y de la propiedad innerHTML -->
+
+    <p id="demo"></p>
+    <script>document.getElementById("demo").innerHTML = "Hola Mundo";</script>
+
+    <p id="intro">Introducción</p>
+    <script>const intro = document.getElementById("intro");</script>
+
+    <p id="p1">Hola mundo</p>
+    <script>document.getElementById("p1").innerHTML = "Nuevo Texto!";</script>
+
+    <h1 id="titulo">Encabezado Viejo</h1>
+    <script>
+        const elemento = document.getElementById("titulo");
+        elemento.innerHTML = "Nuevo Encabezado";
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 2) Búsqueda de elementos HTML por nombre de etiqueta -->
+
+    <script>
+        const element = document.getElementByName("p");
+
+        const x = document.getElementById("main");
+        console.log(x);
+        const y = x.getElementsByTagName("p");
+        console.log(y);
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 3) Encontrar elementos por nombre de clases -->
+    
+    <script>
+        const a = document.getElementsByClassName("intro") 
+        console.log(a);
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- 4) Búsqueda de elementos HTML mediante selectores de CSS -->
+
+    <p class="intro">este es un ejemplo</p>
+    <p class="intro">este es otro ejemplo</p>
+    <script>
+        const b = document.querySelectorAll("p.intro");
+    </script>
+    <script>
+
+        const listItems = document.querySelector("ul > li");
+        console.log(listItems);
+
+        const h1Element = document.querySelectorAll("h1");
+        console.log(h1Element);
+
+        const list = document.querySelectorAll(".list")
+        console.log(list);
+
+        const listaDeElementos = document.querySelectorAll("ul > li");
+
+        listaDeElementos.forEach((item) => 
+        {
+            console.log(item);
+        });
+
+        const h1 = document.querySelector("h1");
+        h1.style.color = "blue";
+    
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 5) Búsqueda de elementos HTML por colecciones de objetos HTML -->
+
+    <script>
+        const c = document.forms["form1"];
+        let texto = "";
+         for(let i = 0; i < c.length; i++)
+        {
+            texto += c.elements[i].value + "<br>";
+        }
+         document.getElementById("demo").innerHTML = texto;
+         console.log(c);
+    </script>
+    
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 6) Agregar nuevos elementos al documento HTML -->
+    
+    <script>
+        let lista = document.createElement("ul");
+        document.body.appendChild(lista);
+
+        let elemento1 = document.createElement("li");
+        elemento1.textContent = "Flor";
+        lista.appendChild(elemento1);
+
+        let elemento2 = document.createElement("li");
+        elemento2.textContent = "Jaguar";
+        lista.appendChild(elemento2);
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 7) Usando el método addEventListener() para escuchar eventos en la página -->
+
+    <script>
+        const button = document.getElementById("btn");
+        button.addEventListener("click", () => 
+        {
+            alert("Gracias por dar click");
+        });
+    </script>
+    
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 8) Validación de formulario -->
+    
+    <script>
+        function validarFormulario() 
+        {
+            let x = document.forms["mi formulario"]["nombre"].value;
+            if (x === "") 
+            {
+                alert("Se debe completar el nombre");
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        function miFunction() 
+        {
+            let x = document.getElementById("numero").value;
+            let texto;
+            if (isNaN(x) || x < 1 || x > 10) 
+            {
+                texto = "Entrada no válida";
+            } else 
+            {
+                texto = "Entrada correcta";
+            }
+            document.getElementById("demo").innerHTML = texto;
+        }
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 9) Cambiar el valor de un atributo -->
+
+    <script>
+        document.getElementById("miImagen").src = "cat.jpg";
+    </script>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    
+    <!-- 10) Contenido dinámico -->
+
+    <script>
+        document.getElementById("demo").innerHTML = "Fecha: " + Date();
+    </script>
+    
+</body>
+</html>
